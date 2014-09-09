@@ -28,11 +28,11 @@
 - (void)awakeFromNib
 {
     [NSApp setDelegate:self];
-
+    
     // Allocate a VLCVideoView instance and tell it what area to occupy.
     NSRect rect1 = NSMakeRect(0, 0, 0, 0);
     rect1.size = [videoView1 frame].size;
-
+    
     vlcVideoView1 = [[VLCVideoView alloc] initWithFrame:rect1];
     [videoView1 addSubview:vlcVideoView1];
     [vlcVideoView1 setAutoresizingMask: NSViewHeightSizable|NSViewWidthSizable];
@@ -64,11 +64,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    NSString *sampleVideo = @"http://media.rc.rit.edu/grav-screenshots/grav264.video.mp4-ipad.video.mp4";
+    //NSString *sampleVideo = @"http://media.rc.rit.edu/grav-screenshots/grav264.video.mp4-ipad.video.mp4";
     
-    [textField1 setStringValue:sampleVideo];
-    [textField2 setStringValue:sampleVideo];
-    [textField3 setStringValue:sampleVideo];
+    [textField1 setStringValue:@"rtsp://cyan.local:8554/video.mp4"];
+    [textField2 setStringValue:@"rtsp://magenta.local:8554/video.mp4"];
+    [textField3 setStringValue:@"rtsp://yellow.local:8554/video.mp4"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -99,6 +99,19 @@
     [player3 play];
 }
 
+- (IBAction)doEnterFullscreen:(id)sender {
+    if(![mainView isInFullScreenMode]) {
+        //[mainView enterFullScreenMode:[NSScreen mainScreen] withOptions:nil];
+        NSDictionary *opts = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], NSFullScreenModeAllScreens, NULL, NSFullScreenModeApplicationPresentationOptions, nil];
+        [mainView enterFullScreenMode:[NSScreen mainScreen] withOptions:opts];
+
+        [window makeKeyWindow];
+        
+    } else {
+        [mainView exitFullScreenModeWithOptions:nil];
+    }
+}
+
 //- (void)pause:(id)sender
 //{
 //    NSLog(@"Sending pause message to media player...");
@@ -123,49 +136,6 @@
 //    }
 //}
 
-//- (void)setSPU:(id)sender
-//{
-//    if (player.media)
-//        player.currentVideoSubTitleIndex = [[spuPopup selectedItem] tag];
-//}
-//
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//    if ([keyPath isEqualToString:@"media"] && object == playlist)
-//        [playlistOutline reloadData];
-//}
 
-// NSTableView Implementation
-//- (int)numberOfRowsInTableView:(NSTableView *)tableView
-//{
-//    return [playlist count];
-//}
-//
-//- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn
-//            row:(int)row
-//{
-//    NSString *title = [(VLCMedia *)[playlist mediaAtIndex:row].metaDictionary valueForKey:VLCMetaInformationTitle];
-//
-//    return title ? title : [playlist mediaAtIndex:row].url.lastPathComponent;
-//}
-//
-//- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id <NSDraggingInfo>)info
-//                 proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)op
-//{
-//    return NSDragOperationEvery; /* This is for now */
-//}
-//
-//- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id <NSDraggingInfo>)info
-//              row:(int)row dropOperation:(NSTableViewDropOperation)operation
-//{
-//    NSArray *droppedItems = [[info draggingPasteboard] propertyListForType:NSFilenamesPboardType];
-//
-//    for (int i = 0; i < [droppedItems count]; i++) {
-//        NSString * filename = [droppedItems objectAtIndex:i];
-//        VLCMedia * media = [VLCMedia mediaWithPath:filename];
-//        [playlist addMedia:media];
-//    }
-//    return YES;
-//}
 
 @end

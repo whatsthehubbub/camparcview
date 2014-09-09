@@ -12,6 +12,7 @@
 		4EBDFEFB19B3797400F0F7CB /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBDFEFA19B3797400F0F7CB /* Syphon.framework */; };
 		4EBDFEFC19B3797D00F0F7CB /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EBDFEFA19B3797400F0F7CB /* Syphon.framework */; };
 		6333027B0BD24CDB00193D7D /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 633302790BD24CDB00193D7D /* Controller.m */; };
+		6A76828D19BEE08400CD6504 /* CustomBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A76828C19BEE08400CD6504 /* CustomBGView.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -45,6 +46,8 @@
 		4EBDFEFA19B3797400F0F7CB /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		633302780BD24CDB00193D7D /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		633302790BD24CDB00193D7D /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		6A76828B19BEE08400CD6504 /* CustomBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBGView.h; sourceTree = "<group>"; };
+		6A76828C19BEE08400CD6504 /* CustomBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBGView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BasicPlayerWithPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicPlayerWithPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,6 +69,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6A76828B19BEE08400CD6504 /* CustomBGView.h */,
+				6A76828C19BEE08400CD6504 /* CustomBGView.m */,
 				633302780BD24CDB00193D7D /* Controller.h */,
 				633302790BD24CDB00193D7D /* Controller.m */,
 			);
@@ -205,6 +210,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				6333027B0BD24CDB00193D7D /* Controller.m in Sources */,
+				6A76828D19BEE08400CD6504 /* CustomBGView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

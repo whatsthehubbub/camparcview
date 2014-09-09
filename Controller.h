@@ -22,12 +22,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import <VLCKit/VLCKit.h>
-#import <Syphon/Syphon.h>
 
 @interface Controller : NSObject
 {
     IBOutlet id window;
-    
+
+    IBOutlet id mainView;
     IBOutlet id videoView1;
     IBOutlet id videoView2;
     IBOutlet id videoView3;
@@ -50,6 +50,6 @@
 - (IBAction)play2:(id)sender;
 - (IBAction)play3:(id)sender;
 
-//- (IBAction)setSPU:(id)sender;
+- (IBAction)doEnterFullscreen:(id)sender;
 
 @end
