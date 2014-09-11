@@ -31,7 +31,11 @@
     IBOutlet id videoView1;
     IBOutlet id videoView2;
 //    IBOutlet id videoView3;
-    
+
+    IBOutlet id dragView1;
+    IBOutlet id dragView2;
+    //    IBOutlet id dragView3;
+
     IBOutlet NSTextField *textField1;
     IBOutlet NSTextField *textField2;
 //    IBOutlet NSTextField *textField3;

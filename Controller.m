@@ -31,20 +31,20 @@
     
     // Allocate a VLCVideoView instance and tell it what area to occupy.
     NSRect rect1 = NSMakeRect(0, 0, 0, 0);
-    rect1.size = [videoView1 frame].size;
+    rect1.size = [dragView1 frame].size;
     
     vlcVideoView1 = [[VLCVideoView alloc] initWithFrame:rect1];
-    [videoView1 addSubview:vlcVideoView1];
+    [dragView1 addSubview:vlcVideoView1];
     [vlcVideoView1 setAutoresizingMask: NSViewHeightSizable|NSViewWidthSizable];
     vlcVideoView1.fillScreen = YES;
     
     player1 = [[VLCMediaPlayer alloc] initWithVideoView:vlcVideoView1];
     
     NSRect rect2 = NSMakeRect(0, 0, 0, 0);
-    rect2.size = [videoView2 frame].size;
+    rect2.size = [dragView2 frame].size;
     
     vlcVideoView2 = [[VLCVideoView alloc] initWithFrame:rect2];
-    [videoView2 addSubview:vlcVideoView2];
+    [dragView2 addSubview:vlcVideoView2];
     [vlcVideoView2 setAutoresizingMask: NSViewHeightSizable|NSViewWidthSizable];
     vlcVideoView2.fillScreen = YES;
     
@@ -67,9 +67,14 @@
 {
     //NSString *sampleVideo = @"http://media.rc.rit.edu/grav-screenshots/grav264.video.mp4-ipad.video.mp4";
     
-    [textField1 setStringValue:@"rtsp://cyan.local:8554/video.mp4"];
+    [textField1 setStringValue:@"http://media.rc.rit.edu/grav-screenshots/grav264.video.mp4-ipad.video.mp4"];
     [textField2 setStringValue:@"rtsp://magenta.local:8554/video.mp4"];
 //    [textField3 setStringValue:@"rtsp://yellow.local:8554/video.mp4"];
+}
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+	[NSApp terminate:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -92,13 +97,13 @@
     [player2 play];
 }
 
-- (IBAction)play3:(id)sender {
-    NSLog(@"play 3 pressed");
+//- (IBAction)play3:(id)sender {
+//    NSLog(@"play 3 pressed");
     
 //    VLCMedia *media = [VLCMedia mediaWithURL:[NSURL URLWithString:[textField3 stringValue]]];
 //    [player3 setMedia:media];
 //    [player3 play];
-}
+//}
 
 - (IBAction)doEnterFullscreen:(id)sender {
     if(![mainView isInFullScreenMode]) {
