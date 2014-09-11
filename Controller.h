@@ -30,25 +30,25 @@
     IBOutlet id mainView;
     IBOutlet id videoView1;
     IBOutlet id videoView2;
-    IBOutlet id videoView3;
+//    IBOutlet id videoView3;
     
     IBOutlet NSTextField *textField1;
     IBOutlet NSTextField *textField2;
-    IBOutlet NSTextField *textField3;
+//    IBOutlet NSTextField *textField3;
 
     VLCVideoView *vlcVideoView1;
     VLCVideoView *vlcVideoView2;
-    VLCVideoView *vlcVideoView3;
+//    VLCVideoView *vlcVideoView3;
     
     VLCMediaPlayer *player1;
     VLCMediaPlayer *player2;
-    VLCMediaPlayer *player3;
+//    VLCMediaPlayer *player3;
 }
 - (void)awakeFromNib;
 
 - (IBAction)play1:(id)sender;
 - (IBAction)play2:(id)sender;
-- (IBAction)play3:(id)sender;
+//- (IBAction)play3:(id)sender;
 
 - (IBAction)doEnterFullscreen:(id)sender;
 

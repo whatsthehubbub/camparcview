@@ -50,7 +50,7 @@
     
     player2 = [[VLCMediaPlayer alloc] initWithVideoView:vlcVideoView2];
     
-    
+/*
     NSRect rect3 = NSMakeRect(0, 0, 0, 0);
     rect3.size = [videoView3 frame].size;
     
@@ -60,6 +60,7 @@
     vlcVideoView3.fillScreen = YES;
     
     player3 = [[VLCMediaPlayer alloc] initWithVideoView:vlcVideoView3];
+ */
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -68,7 +69,7 @@
     
     [textField1 setStringValue:@"rtsp://cyan.local:8554/video.mp4"];
     [textField2 setStringValue:@"rtsp://magenta.local:8554/video.mp4"];
-    [textField3 setStringValue:@"rtsp://yellow.local:8554/video.mp4"];
+//    [textField3 setStringValue:@"rtsp://yellow.local:8554/video.mp4"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -94,9 +95,9 @@
 - (IBAction)play3:(id)sender {
     NSLog(@"play 3 pressed");
     
-    VLCMedia *media = [VLCMedia mediaWithURL:[NSURL URLWithString:[textField3 stringValue]]];
-    [player3 setMedia:media];
-    [player3 play];
+//    VLCMedia *media = [VLCMedia mediaWithURL:[NSURL URLWithString:[textField3 stringValue]]];
+//    [player3 setMedia:media];
+//    [player3 play];
 }
 
 - (IBAction)doEnterFullscreen:(id)sender {
